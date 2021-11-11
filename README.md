@@ -12,7 +12,7 @@
 - At least two data centres per regions
 - Not all regions have all services available
 #### AWS Availability Zones (AZs)
-- Zones within each region
+- The data centres within each region
 #### Advantages of Cloud Computing and AWS
 - Go global in minutes
 - No need to spend on running and maintaining data centres
