@@ -1,5 +1,5 @@
 # Cloud Computing
-- On-Demand availablitiy of computer system resources - esp. data storage and computing power
+- On-Demand availability of computer system resources - esp. data storage and computing power
 
 ## Amazon Web Services (AWS)
 - Amazon Web Service
