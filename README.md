@@ -135,7 +135,7 @@ sudo systemctl enable mongod
 ## Connecting App and Mongodb
 - In app instance
 ```
-sudo echo 'export DB_HOST="mongodb://ip:27017/posts"' >> ~/.bashrc
+sudo echo 'export DB_HOST="mongodb://dbip:27017/posts"' >> ~/.bashrc
 source ~/.bashrc
 node app/app/seeds/seed.js
 npm start
