@@ -9,7 +9,7 @@
 
 #### AWS Regions
 - Locations that the AWS cloud spans
-- At least two data centres per regions
+- At least two data centres per region
 - Not all regions have all services available
 #### AWS Availability Zones (AZs)
 - The data centres within each region
