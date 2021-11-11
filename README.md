@@ -54,12 +54,17 @@
 ## Tags
 - Key: Name; Value: devops_conor_app
 ## Configure Security Group
+- ssh 22 from own IP
+- HTTP 80
+- App 3000
 
 ## ssh debugging
 ```
 eval ssh-agent
 ssh-add "keyfile.pem"
 ```
+
+## Set up App Environment
 - update and upgrade system
 - install nginx
 - nginx enabled
@@ -69,7 +74,61 @@ ssh-add "keyfile.pem"
 - install required dependencies
 - `app code` currently available on `localhost`
 - task: `find out how to migrate/transfer/copy data from on prem to cloud`
-
+  - scp
+  - or clone git (better)
 - npm install
 - npm start
+
+## Reverse Proxy on App
+```
+sudo rm -rf /etc/nginx/sites-available/default
+sudo cp app/app/default /etc/nginx/sites-available/
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+systemctl status nginx
+npm start
+```
+
+## EC2 Instance for Mongodb
+- Security group
+  - ssh 22 from own IP
+  - port 27017 from app public IP
+- Environment
+```
+# be careful of these keys, they will go out of date
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
+echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+# sudo apt-get install mongodb-org=3.2.20 -y
+sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+
+# remove vm mongod.conf and replace with local version
+sudo rm -rf /etc/mongod.conf
+sudo cp /home/vagrant/app/environment/db/mongod.conf /etc/
+
+# if mongo is is set up correctly these will be successful
+sudo systemctl restart mongod
+sudo systemctl enable mongod
+```
+
+- Mongod.conf (restart and enable mongod after)
+  ```
+  # network interfaces
+  net:
+    port: 27017
+    bindIp: 0.0.0.0
+  ```
+
+## Connecting App and Mongodb
+- In app instance
+```
+sudo echo 'export DB_HOST="mongodb://ip:27017/posts"' >> ~/.bashrc
+source ~/.bashrc
+node app/app/seeds/seed.js
+npm start
+```
+
   
