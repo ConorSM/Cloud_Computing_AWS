@@ -100,7 +100,23 @@ sudo systemctl enable nginx
 systemctl status nginx
 npm start
 ```
+- default file should be:
+```
+upstream nodejs {
+  server ip:3000;
+  }
 
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://localhost:3000;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
+    }
+  } 
+```
 ## EC2 Instance for Mongodb
 - Security group
   - ssh 22 from own IP
