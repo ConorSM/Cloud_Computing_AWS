@@ -86,8 +86,10 @@ sudo npm install pm2 -g
 - task: `find out how to migrate/transfer/copy data from on prem to cloud`
   - scp
   - or clone git (better)
-- npm install
-- npm start
+```
+npm install
+npm start
+```
 
 ## Reverse Proxy on App
 ```
