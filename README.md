@@ -54,5 +54,22 @@
 ## Tags
 - Key: Name; Value: devops_conor_app
 ## Configure Security Group
-- 
+
+## ssh debugging
+```
+eval ssh-agent
+ssh-add "keyfile.pem"
+```
+- update and upgrade system
+- install nginx
+- nginx enabled
+- check public IP globally
+  
+- install node correct version
+- install required dependencies
+- `app code` currently available on `localhost`
+- task: `find out how to migrate/transfer/copy data from on prem to cloud`
+
+- npm install
+- npm start
   
