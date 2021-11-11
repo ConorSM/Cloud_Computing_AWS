@@ -43,10 +43,16 @@
 # Steps to Create EC2 Instance
 - Go to EC2 dashboard
 - Launch instance
+## Choose an AMI
 - Select Ubuntu Server 16.04 LTS 64-bit (x86) AMI
+## Choose an Instance Type
 - Select t2 micro instance type
-- Choose subnet DevOpsStudent default
-- Add tags using naming convention (Key: Name, Value: devops_conor_app)
-- Configure Security Group
-  - s
+## Configure Instance Details
+- Subnet - DevOpsStudent default
+## Add storage
+- Default
+## Tags
+- Key: Name; Value: devops_conor_app
+## Configure Security Group
 - 
+  
