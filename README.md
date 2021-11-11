@@ -65,13 +65,23 @@ ssh-add "keyfile.pem"
 ```
 
 ## Set up App Environment
-- update and upgrade system
-- install nginx
-- nginx enabled
+- Install nginx
+```
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+```
 - check public IP globally
-  
-- install node correct version
-- install required dependencies
+
+- Install nodejs and required dependencies
+```
+sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs -y
+sudo npm install pm2 -g
+```
 - `app code` currently available on `localhost`
 - task: `find out how to migrate/transfer/copy data from on prem to cloud`
   - scp
