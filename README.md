@@ -24,8 +24,8 @@
 - Cloud Data Centres
 
 ## AWS Services
-- Elastic Compute Service `EC2`
-- Simple Storage SErvice `S3`
+- Elastic Compute Cloud `EC2`
+- Simple Storage Service `S3`
 - Virtual Private Network `VPC`
 - Internet Gateway `IG`
 - Route Tables `RT`
