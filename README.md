@@ -26,6 +26,8 @@
 ## AWS Services
 - Elastic Compute Cloud `EC2`
 - Simple Storage Service `S3`
+- Elastic Block Store `EBS`
+  - Scalable block storage mounted onto the EC2
 - Virtual Private Network `VPC`
 - Internet Gateway `IG`
 - Route Tables `RT`
