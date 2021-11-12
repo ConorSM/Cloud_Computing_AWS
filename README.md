@@ -51,6 +51,7 @@
 - Select t2 micro instance type
 ## Configure Instance Details
 - Subnet - DevOpsStudent default
+- Enable Public IP
 ## Add storage
 - Default
 ## Tags
@@ -160,5 +161,17 @@ source ~/.bashrc
 node app/app/seeds/seed.js
 npm start
 ```
+
+# Creating an EC2 Instance From Our Customised AMI
+
+## Getting the Customised Image
+- Save the EC2 instance as an image
+- Use same naming conventions for the image
+
+## Creating EC2 instance from the customised AMI
+- Click on image and launch
+- Enable Public IP
+- Can click on select existing security group
+- When using ssh command change "root" to "ubuntu"
 
   
