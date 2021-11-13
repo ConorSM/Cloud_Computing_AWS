@@ -106,7 +106,7 @@ npm start
 - default file should be:
 ```
 upstream nodejs {
-  server (ip):3000;
+  server AppPublicIP:3000;
   }
 
   server {
