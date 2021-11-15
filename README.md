@@ -270,5 +270,60 @@ sudo pip install awscli -y
 sudo apt install python3 -y
 sudo apt install python3-pip -y
 alias python=python3
+sudo pip3 install awscli
+aws configure
+
+# see buckets
+aws s3 ls
+
+# make bucket
+aws s3 mb s3://bucket-name
+
+# copy file to bucket
+aws s3 cp path/to/file s3://bucket-name/
+
+# copy file from bucket to ec2
+aws s3 cp s3://bucket-name/file directory/on/ec2
+# or
+aws s3 sync s3://bucket-name/ ec2/new/directory
+
+# delete all files from bucket
+aws s3 rm s3://bucket-name --recursive
+
+# delete bucket from aws
+aws s3 rb s3://bucket-name
 ```
+
+### S3 
+- `aws se ls` to list buckets
+- `aws --version`
+- `aws configure` to add our keys and config
+- `aws s3 mb s3://name --region name`
+- `aws s3 cp s3://name/ file.md`
+- `aws s3 cp s3://name/file.md file.md`
+- `aws s3 sync s3://bucketname/ test`
+- `aws s3 rm s3://bucketname --recursive`
+- `aws s3 rb s3://bucketname`
+
+### AWSCLI
+- AWSCLI can be used to create any `aws` resources required
+
+# Making App Highly Available
+
+## Autoscaling and Load Balancing
+- Automatically adjusts the amount of computational resources based on the server load
+- Distributes traffic between EC22 instances to prevent any from being overwhelmed
+
+### Steps
+- ASG: Launch Template or configuration
+- ALB: Target group HTTP 80
+- AWS keys
+- VPC - Subnets  - SG
+  - Type of Instance
+  - AMI-id Node-app AMI
+  - EBS storage
+
+### Autoscaling group to launch node app with min 2 desired, 2 max, 3 ec2s, in multi AZs
+- Use the user data option to run the script to lauch nodeapp without DB in your first iteration, second iteration connect to DB using DB AMI Cloudwatch to launch autoscaling group
+
 

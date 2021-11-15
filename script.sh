@@ -8,3 +8,5 @@ sudo pip install awscli -y
 sudo apt install python3 -y
 sudo apt install python3-pip -y
 alias python=python3
+sudo pip3 install awscli
+aws configure
