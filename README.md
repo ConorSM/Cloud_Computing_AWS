@@ -174,6 +174,15 @@ npm start
 - Can click on select existing security group
 - When using ssh command change "root" to "ubuntu"
 
-# Creating an Alarm Notification on AWS
+# Create a CloudWatch alarm for an instance
+- Open the Amazon EC2 console
+- In the navigation pane, choose Instances.
+- Select the instance and choose Actions, Monitor and troubleshoot, Manage CloudWatch alarms
+- On the Manage CloudWatch alarms detail page, under Add or edit alarm, select Create an alarm
+- For Alarm notification, choose whether to turn the toggle on or off to configure Amazon Simple Notification Service (Amazon SNS) notifications. Enter an existing Amazon SNS topic or enter a name to create a new topic
+- For Alarm action, choose whether to turn the toggle on or off to specify an action to take when the alarm is triggered. Select an action from the dropdown
+- For Alarm thresholds, select the metric and criteria for the alarm. For example, you can leave the default settings for Group samples by (Average) and Type of data to sample (CPU utilization) For Alarm when, choose >= and enter 0.80. For Consecutive period, enter 1. For Period, select 5 minutes
+- (Optional) For Sample metric data, choose Add to dashboard
+- Choose Create
 
   
