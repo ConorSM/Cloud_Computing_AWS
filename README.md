@@ -28,6 +28,8 @@
   - Web service that provides secure, resizable compute capacity in the cloud
 - Simple Storage Service `S3`
   - Object storage service
+  - Store and protect any amount of data
+  - Good tool for Disaster Recovery Planning
 - Elastic Block Store `EBS`
   - Scalable block storage mounted onto the EC2
 - Virtual Private Network `VPC`
@@ -180,6 +182,7 @@ npm start
 # Create a CloudWatch alarm for an instance
 - Open the Amazon EC2 console
 - In the navigation pane, choose Instances.
+- Enable detailed monitoring on the instance
 - Select the instance and choose Actions, Monitor and troubleshoot, Manage CloudWatch alarms
 - On the Manage CloudWatch alarms detail page, under Add or edit alarm, select Create an alarm
 - For Alarm notification, choose whether to turn the toggle on or off to configure Amazon Simple Notification Service (Amazon SNS) notifications. Enter an existing Amazon SNS topic or enter a name to create a new topic
@@ -240,3 +243,32 @@ npm start
   - Increasing the size of your instance
 - Scaling out
   - Increasing the number of instances
+
+# AWS Simple Storage Servie `S3`
+- Object storage service offering scalability, data availability, security, and performance
+- Used to store and protect any amount of data
+  - Good tool for Disaster Recovery Planning
+- S3 Storage Classes:
+  - Standard - `S3 Glacier
+
+## To Create AWS CLI:
+- Dependencies:
+  - python3 with any other requried
+- AWS access and secret keys
+- S3 access through our IAM role/account
+  - apply CRUD: Create - Read- Update - Delete
+  
+- Data Persistency
+
+- Commands
+```
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install python -y
+sudo apt-get install python-pip -y
+sudo pip install awscli -y
+sudo apt install python3 -y
+sudo apt install python3-pip -y
+alias python=python3
+```
+
