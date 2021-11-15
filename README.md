@@ -25,7 +25,9 @@
 
 ## AWS Services
 - Elastic Compute Cloud `EC2`
+  - Web service that provides secure, resizable compute capacity in the cloud
 - Simple Storage Service `S3`
+  - Object storage service
 - Elastic Block Store `EBS`
   - Scalable block storage mounted onto the EC2
 - Virtual Private Network `VPC`
@@ -35,6 +37,7 @@
 - Network Access Control `NALs`
 - Security Groups `SG`
 - Cloudwatch `CW`
+  - A monitoring and management service
 - Simple Notification Service `SNS`
 - Simple Queue Service `SQS`
 - Load Balancers `LB` - `ALB` - `ELB` - `NLB`
@@ -185,4 +188,55 @@ npm start
 - (Optional) For Sample metric data, choose Add to dashboard
 - Choose Create
 
-  
+## Setting up SNS
+
+# AWS Monitoring
+- Questions to ask
+  - What should we monitor?
+  - What resources will we monitor
+  - How often will we monitor
+  - What tools are we going to use to perform these tasks
+  - Who will perform the monitoring
+  - Who should be notified by the alarm
+- Monitoring endpoints
+  - Application Server - `EC2`
+  - CPU utilisation %
+  - Number of requests - REsponse Time - Latency
+  - Firewall
+
+## Four Golden Signals of Monitoring
+- Latency
+  - Time taken to service a request
+- Traffic
+  - How much demand is being placed on your system
+- Errors
+  - The rate at which requests fail
+- Saturation
+  - How full the service is
+
+### Resources Monitored by CloudWatch
+- EC2
+- Auto-Scaling
+- Load Balancer
+- Amazon SNS
+- Amazon SQS
+- Amazon RDS
+- Amazon S3
+- DynamoDB
+
+### CloudWatch Alarm Actions
+- SNS email notification
+- Auto-Scaling
+
+## Automating the Processess
+- Application Load Balancer `ALB`
+- Autoscaling Group
+- Launch template config - how many instances at all times
+- 2 instances - Min=2 and Max=3
+- Policies of scaling out - and scaling in to min=2
+
+### Scaling on Demand
+- Scaling up
+  - Increasing the size of your instance
+- Scaling out
+  - Increasing the number of instances
