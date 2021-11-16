@@ -344,4 +344,15 @@ aws s3 rb s3://bucket-name
 ![](images/vpc.png)
 
 ## Testing the VPC for Public Subnet and SG for our APP
-- 
+
+
+### SG rules
+- App
+  - 80
+  - 3000
+  - 22 from only your own IP
+- DB
+  - 27017 from app IP or app sg or 0.0.0.0:27017 (shouldn't allow public access)
+  - 27017 from 10.104.1.0/24 IP
+  - 22 from only your own IP
+ 
