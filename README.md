@@ -340,3 +340,8 @@ aws s3 rb s3://bucket-name
   - 4.2 Private subnets 10.104.2.0/24 - used for Mongodb 27017
 - Step 5: Associate public subnet to our RT
 - Step 6: Security groups public and private with required rules for public and private subnets
+
+![](images/vpc.png)
+
+## Testing the VPC for Public Subnet and SG for our APP
+- 
