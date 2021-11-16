@@ -343,7 +343,7 @@ aws s3 rb s3://bucket-name
 
 ![](images/vpc.png)
 
-## Testing the VPC for Public Subnet and SG for our APP
+### Testing the VPC for Public Subnet and SG for our APP
 
 
 ### SG rules
