@@ -312,7 +312,7 @@ aws s3 rb s3://bucket-name
 
 ## Autoscaling and Load Balancing
 - Automatically adjusts the amount of computational resources based on the server load
-- Distributes traffic between EC22 instances to prevent any from being overwhelmed
+- Distributes traffic between EC2 instances to prevent any from being overwhelmed
 
 ### Steps
 - ASG: Launch Template or configuration
