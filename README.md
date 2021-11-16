@@ -326,4 +326,17 @@ aws s3 rb s3://bucket-name
 ### Autoscaling group to launch node app with min 2 desired, 2 max, 3 ec2s, in multi AZs
 - Use the user data option to run the script to lauch nodeapp without DB in your first iteration, second iteration connect to DB using DB AMI Cloudwatch to launch autoscaling group
 
+# AWS Netowrking
 
+## Creating a VPC
+- Step 1: VPC CIDR block 10.104.0.0/16
+- Step 2: Internet gateway
+  - 2.1: Attach the IG to VPC
+- Step 3: Route Table
+  - 3.1: Allow 10.104.0.0/16
+  - 3.2: Allow all 0.0.0.0/16
+- Step 4 Public Subnet 10.104.1.0/24
+  - 4.1 Connect to our VPC
+  - 4.2 Private subnets 10.104.2.0/24 - used for Mongodb 27017
+- Step 5: Associate public subnet to our RT
+- Step 6: Security groups public and private with required rules for public and private subnets
